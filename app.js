@@ -5,3 +5,32 @@ const attribution =
 
 const tiles = L.tileLayer(tileUrl, { attribution });
 tiles.addTo(map);
+
+const circleLayer = L.circle([30.3165, 78.0322], {
+  radius: 20000,
+  color: "coral",
+});
+circleLayer.addTo(map);
+
+const bounds = [
+  [54.559322, -5.767822],
+  [56.1210604, -3.02124],
+];
+const rectLayer = L.rectangle(bounds);
+rectLayer.addTo(map);
+
+const triangleCoords = [
+  [25.774, -80.19],
+  [18.466, -66.118],
+  [33.321, -64.757],
+];
+const polygonLayer = L.polygon(triangleCoords);
+polygonLayer.addTo(map);
+
+var latlngs = [
+  [45.51, -122.68],
+  [37.77, -122.43],
+  [34.04, -118.2],
+];
+const polylineLayer = L.polyline(latlngs);
+polylineLayer.addTo(map);
