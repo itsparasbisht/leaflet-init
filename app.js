@@ -34,3 +34,9 @@ var latlngs = [
 ];
 const polylineLayer = L.polyline(latlngs);
 polylineLayer.addTo(map);
+
+const cMarker = L.circleMarker([28.7041, 77.1025], {
+  radius: 50,
+  color: "red",
+});
+cMarker.addTo(map);
