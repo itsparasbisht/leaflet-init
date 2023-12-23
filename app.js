@@ -35,8 +35,17 @@ var latlngs = [
 const polylineLayer = L.polyline(latlngs);
 polylineLayer.addTo(map);
 
-const cMarker = L.circleMarker([28.7041, 77.1025], {
-  radius: 50,
-  color: "red",
+// const cMarker = L.circleMarker([28.7041, 77.1025], {
+//   radius: 50,
+//   color: "red",
+// });
+// cMarker.addTo(map);
+
+const icon = L.icon({
+  iconUrl: "map-marker.png",
+  iconSize: [30, 30],
 });
-cMarker.addTo(map);
+
+const marker = L.marker([28.7041, 77.1025], { icon });
+marker.bindPopup("<h2>Your destination 1</h2>");
+marker.addTo(map);
