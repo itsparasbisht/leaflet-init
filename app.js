@@ -28,3 +28,23 @@ function generateList() {
 }
 
 generateList();
+
+function handleEachFeature(feature, layer) {
+  layer.bindPopup(feature.properties.description, {
+    closeButton: false,
+    offset: L.point(0, -8),
+  });
+}
+
+const myIcon = L.icon({
+  iconUrl: "map-marker.png",
+  iconSize: [30, 30],
+});
+
+L.geoJSON(data, {
+  onEachFeature: handleEachFeature,
+  pointToLayer: (feature, latlng) =>
+    L.marker(latlng, {
+      icon: myIcon,
+    }),
+}).addTo(map);
