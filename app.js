@@ -5,9 +5,11 @@ const attribution =
 
 L.tileLayer(tileUrl, { attribution }).addTo(map);
 
+// sidebar list markup generator
 function generateList() {
   const ul = document.querySelector(".list");
 
+  // data available from data.js (added inside index.html)
   data.forEach((destination) => {
     const li = document.createElement("li");
     const div = document.createElement("div");
@@ -33,13 +35,28 @@ function generateList() {
 
 generateList();
 
+function generateDestinationPopupMarkup(properties) {
+  return `
+  <div class="popupCustomContent">
+  <h2>${properties.name}</h2>
+  <img src="${properties.imageUrl}" />
+  <p>${properties.description}</p>
+  <div class="badges">
+    <b class="elevation">Elevation - ${properties.elevation}</b>
+    <b class="elevation">District - Almora</b>
+  </div>
+  </div>
+  `;
+}
+
 function handleEachFeature(feature, layer) {
-  layer.bindPopup(feature.properties.description, {
+  layer.bindPopup(generateDestinationPopupMarkup(feature.properties), {
     closeButton: false,
     offset: L.point(0, -8),
   });
 }
 
+// custom map marker
 const myIcon = L.icon({
   iconUrl: "map-marker.png",
   iconSize: [30, 30],
@@ -53,6 +70,7 @@ L.geoJSON(data, {
     }),
 }).addTo(map);
 
+// called onClick of sidebar items
 function flyToDestination(destination) {
   const lat = destination.geometry.coordinates[1];
   const lng = destination.geometry.coordinates[0];
@@ -67,7 +85,7 @@ function flyToDestination(destination) {
       offset: L.point(0, -8),
     })
       .setLatLng([lat, lng])
-      .setContent(destination.properties.description)
+      .setContent(generateDestinationPopupMarkup(destination.properties))
       .openOn(map);
   }, 3000);
 }
