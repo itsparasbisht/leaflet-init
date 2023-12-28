@@ -44,7 +44,7 @@ function generateDestinationPopupMarkup(properties) {
   <p>${properties.description}</p>
   <div class="badges">
     <b class="elevation">Elevation - ${properties.elevation}</b>
-    <b class="elevation">District - Almora</b>
+    <b class="elevation">District - ${properties.district}</b>
   </div>
   </div>
   `;
