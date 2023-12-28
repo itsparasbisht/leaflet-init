@@ -51,6 +51,9 @@ main {
     font-size: 20px;
     color: rgb(22, 22, 22);
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .destination-item p {
@@ -111,4 +114,8 @@ main {
 .badges b:last-child {
     background-color: rgb(255, 213, 0);
     color: rgb(0, 0, 0);
+}
+
+.right-arrow {
+    width: 20px;
 }

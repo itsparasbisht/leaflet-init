@@ -21,7 +21,8 @@ function generateList() {
     });
 
     div.classList.add("destination-item");
-    a.innerText = destination.properties.name;
+    // a.innerHTML = "destination.properties.name"
+    a.innerHTML = `${destination.properties.name} <img class="right-arrow" src="./right-arrow.png">`;
     a.href = "#";
 
     p.innerText = destination.properties.description;
