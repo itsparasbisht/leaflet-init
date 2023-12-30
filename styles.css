@@ -121,3 +121,41 @@ main {
 .right-arrow {
     width: 20px;
 }
+
+@media all and (max-width: 800px) {
+    main {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #map {
+        width: 100%;
+    }
+
+    .destination-list {
+        width: 100%;
+        border-right: none;
+    }
+
+    .popupCustomContent {
+        padding: 15px;
+        width: 300px !important;
+    }
+
+    .popupCustomContent img {
+        width: 250px;
+        height: 180px;
+    }
+
+    .popupCustomContent h2 {
+        font-size: 16px;
+    }
+
+    .popupCustomContent p {
+        font-size: 13px;
+    }
+
+    .badges {
+        font-size: 12px;
+    }
+}
