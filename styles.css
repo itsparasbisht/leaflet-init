@@ -130,32 +130,60 @@ main {
 
     #map {
         width: 100%;
+        height: 70vh;
     }
 
     .destination-list {
         width: 100%;
         border-right: none;
+        border-top: 6px dashed black;
+    }
+
+    .destination-list .heading {
+        display: none;
+    }
+
+    .destination-item {
+        margin: 0.5rem 0;
+        padding-bottom: 0.5rem;
+    }
+
+    .destination-item a {
+        font-size: 16px;
+    }
+
+    .destination-item p {
+        font-size: 14px;
+    }
+
+    .right-arrow {
+        width: 16px;
     }
 
     .popupCustomContent {
         padding: 15px;
-        width: 300px !important;
+        width: 80vw !important;
+        max-width: 400px;
     }
 
     .popupCustomContent img {
-        width: 250px;
-        height: 180px;
+        width: 95%;
+        height: 150px;
     }
 
     .popupCustomContent h2 {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .popupCustomContent p {
-        font-size: 13px;
+        font-size: 12px;
+    }
+
+    .elevation {
+        padding: 3px 7px;
     }
 
     .badges {
-        font-size: 12px;
+        font-size: 10px;
     }
 }
