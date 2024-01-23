@@ -1,9 +1,30 @@
-const map = L.map("map").setView([30.3165, 78.0322], 8);
-const tileUrl = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
-const attribution =
-  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, coded by Paras';
+const osmLayer = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, coded by Paras',
+});
 
-L.tileLayer(tileUrl, { attribution }).addTo(map);
+const googleSat = L.tileLayer(
+  "http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
+  {
+    maxZoom: 20,
+    subdomains: ["mt0", "mt1", "mt2", "mt3"],
+  }
+);
+
+const map = L.map("map", {
+  center: [30.3165, 78.0322],
+  zoom: 8,
+  layers: [osmLayer, googleSat],
+});
+
+const baseMaps = {
+  "Satellite Map": googleSat,
+  "Open Street Map": osmLayer,
+};
+
+const layerControl = L.control
+  .layers(baseMaps, null, { collapsed: false })
+  .addTo(map);
 
 // sidebar list markup generator
 function generateList() {

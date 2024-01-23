@@ -18,7 +18,7 @@ const data = [
     type: "Feature",
     geometry: {
       type: "Point",
-      coordinates: [79.8773, 29.7958],
+      coordinates: [79.8527819, 29.6384344],
     },
     properties: {
       name: "Jageshwar Dham",
@@ -48,7 +48,7 @@ const data = [
     type: "Feature",
     geometry: {
       type: "Point",
-      coordinates: [78.2676, 30.0869],
+      coordinates: [78.2990999, 30.1038807],
     },
     properties: {
       name: "Rishikesh",
@@ -108,7 +108,7 @@ const data = [
     type: "Feature",
     geometry: {
       type: "Point",
-      coordinates: [79.66264, 29.5978918],
+      coordinates: [79.756669, 29.5019868],
     },
     properties: {
       name: "Dol Ashram",
