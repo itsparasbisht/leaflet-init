@@ -119,4 +119,19 @@ const data = [
       imageUrl: "./images/dol.jpg",
     },
   },
+  {
+    type: "Feature",
+    geometry: {
+      type: "Point",
+      coordinates: [79.6445241, 29.4768399],
+    },
+    properties: {
+      name: "Mukteshwar Zero Point",
+      description:
+        "Mukteshwar gets its name from a 350-year-old temple of Shiva, known as Mukteshwar Dham, situated atop the highest point in the town, on the veterinary institute's campus. Close to it lie the overhanging cliffs, locally known as Chauli-ki-Jali, used for rock climbing and rappelling, with an excellent view of the valleys below.",
+      elevation: "2,171 m",
+      district: "Nainital",
+      imageUrl: "./images/zero-point.jpg",
+    },
+  },
 ];
